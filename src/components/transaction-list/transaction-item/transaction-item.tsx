@@ -19,9 +19,9 @@ function TransactionItem({
           {currencyFormat(value)}
         </div>
   
-        <button className="btn delete-btn" onClick={() => onDeleteClick(id)}>
+        {/* <button className="btn delete-btn" onClick={() => onDeleteClick(id)}>
           <CrossIcon />
-        </button>
+        </button> */}
       </li>
     );
   }

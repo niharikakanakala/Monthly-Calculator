@@ -8,8 +8,8 @@ import './styles.scss';
 type FormProps = {
     onSubmit: ({ type, description, value }: Transaction) => void;
   };
-
-function Form({ onSubmit }: FormProps) {
+  
+  function Form({ onSubmit }: FormProps) {
     const descriptionRef = React.useRef<HTMLInputElement | null>(null);
     const [type, setType] = React.useState('income');
     const [description, setDescription] = React.useState('');
@@ -18,20 +18,10 @@ function Form({ onSubmit }: FormProps) {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
   
-      if (!descriptionRef.current) return;
-  
-      // Submit the form
-      onSubmit({
-        id: nanoid(),
-        type,
-        description,
-        value: Number(value),
-      } as Transaction);
-  
-      // Reset form values and set focus on description
-      setDescription('');
-      setValue('');
-      descriptionRef.current.focus();
+      //onSubmit should be called with values from the form by defining the types where necessary
+      //form should be reset after submitting and description should be focused.
+      
+      //Should not call onSubmit when descriptionRef is null
     };
   
     const isButtonDisabled = description === '' || value === '';

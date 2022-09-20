@@ -7,19 +7,13 @@ type Props = {
     onDeleteClick: TransactionItemProps['onDeleteClick'];
   };
   
+  
   function TransactionList({ list, onDeleteClick }: Props) {
     return (
       <ul className="transaction-list">
-        {list.map(({ id, description, value, type }) => (
-          <TransactionItem
-            key={id}
-            id={id}
-            type={type}
-            value={value}
-            description={description}
-            onDeleteClick={onDeleteClick}
-          />
-        ))}
+        {/* //map the dynamic props of list into TransactionItem component to renders correctly income type
+  //Refer to type of list for the properties 
+  */}
       </ul>
     );
   }
