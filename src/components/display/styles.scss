@@ -1,0 +1,80 @@
+.display {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5rem;
+  
+    @media (max-width: 600px) {
+      flex: 1;
+    }
+    @media (max-width: 400px) {
+      padding: 2rem;
+    }
+  
+    .title {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+  
+    .budget {
+      font-size: 4.6rem;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  
+    .income {
+      margin-bottom: 20px;
+    }
+  
+    
+    .expenses {
+      display: flex;
+      align-items: center;
+      padding: 1.2rem;
+      border-radius: 8px;
+      font-size: 1.8rem;
+      background-color: rgba(228, 87, 53, 0.8);
+  
+      .text {
+        flex: 1;
+      }
+      .value {
+        margin-right: 0.5rem;
+      }
+      .percentage {
+        font-size: 1.3rem;
+        width: 3.4rem;
+        padding: 0.5rem;
+        border-radius: 8px;
+        background-color: rgba(228, 87, 53, 0.2);
+        text-align: center;
+      }
+    }
+
+    .income {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem;
+        border-radius: 8px;
+        font-size: 1.8rem;
+        background-color: rgba(1, 146, 69, 0.8);
+    
+        .text {
+          flex: 1;
+        }
+        .value {
+          margin-right: 0.5rem;
+        }
+        .percentage {
+          font-size: 1.3rem;
+          width: 3.4rem;
+          padding: 0.5rem;
+          border-radius: 8px;
+          background-color: rgba(1, 146, 69, 0.2);
+          text-align: center;
+        }
+      }
+  }
+  

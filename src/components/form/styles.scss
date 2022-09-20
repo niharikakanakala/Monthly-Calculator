@@ -1,0 +1,69 @@
+.add-form {
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  
+    @media (max-width: 500px) {
+      max-width: 30rem;
+      display: grid;
+      row-gap: 1rem;
+      grid-template-columns: auto 1fr auto;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        'description description description'
+        'type value submit';
+    }
+  
+    /* FORM CONTROL */
+    .form-control {
+      color: inherit;
+      padding: 1.4rem;
+      border: 1px solid gray;
+      border-radius: 8px;
+      margin-right: 1rem;
+      transition: border 300ms;
+      font-size: 1.4rem;
+  
+      &:focus {
+        outline: none;
+        border: 1px solid green;
+      }
+    }
+  
+    .type {
+      grid-area: type;
+      font-weight: bold;
+    }
+  
+    .value {
+      grid-area: value;
+      width: 10rem;
+  
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+    }
+  
+    .description {
+      grid-area: description;
+      flex: 1;
+    }
+  
+    /* SUBMIT BUTTON */
+    .submit-btn {
+      grid-area: submit;
+      padding: 0 0.8rem;
+      font-size: 3rem;
+      border: 1px solid transparent;
+  
+      svg {
+        fill: #019245;
+      }
+  
+      &:focus {
+        border: 1px solid #019245;
+      }
+    }
+  }
+  

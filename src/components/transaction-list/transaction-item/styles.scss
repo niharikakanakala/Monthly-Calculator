@@ -1,0 +1,55 @@
+.transaction-item {
+    padding: 1.3rem;
+    border-bottom: 1px solid var(--gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    &:first-child {
+      border-top: 1px solid var(--gray);
+    }
+  
+    /* ITEM HOVER */
+    &:hover {
+      background-color: var(--gray-extra-light);
+  
+      .value {
+        transform: translateX(-20px);
+      }
+      .delete-btn {
+        display: flex;
+      }
+    }
+  
+    /* DESCRIPTION */
+    .description {
+      flex: 1;
+      padding: 0.5rem;
+    }
+  
+    /* VALUE */
+    .value {
+      color: var(--color);
+      margin-right: 1rem;
+      transition: transform 300ms;
+    }
+  
+    /* DELETE BUTTON */
+    .delete-btn {
+      font-size: 1.9rem;
+      display: none;
+  
+      @media only screen and (max-width: 768px) {
+        display: flex;
+      }
+      
+      svg {
+        fill: var(--color);
+      }
+      
+      &:active {
+        transform: translateY(2px);
+      }
+  
+    }
+  }

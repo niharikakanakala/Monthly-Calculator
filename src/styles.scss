@@ -1,0 +1,65 @@
+:root {
+    --border-radius: 8px;
+    --red: #e45735;
+    --red-rgb: 228, 87, 53;
+    --green: #019245;
+    --green-rgb: 1, 146, 69;
+    --gray-extra-light: #f6f6f6;
+    --gray-light: #f8f8f8;
+    --gray: #ccc;
+    --focus-color: var(--green);
+  }
+  
+  /* ================================= */
+  /* GENERAL */
+  /* ================================= */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  html {
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+  }
+  
+  body {
+    min-width: 320px;
+    font-size: 1.6rem;
+  }
+  
+  /* ================================= */
+  /* REUSABLES */
+  /* ================================= */
+  .income {
+    --color: var(--green);
+    --color-rgb: var(--green-rgb);
+  }
+  
+  .expenses {
+    --color: var(--red);
+    --color-rgb: var(--red-rgb);
+  }
+  
+  .hidden {
+    visibility: hidden;
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: var(--border-radius);
+    background: none;
+    transition: border 300ms;
+    cursor: pointer;
+  
+    &:focus {
+      outline: 0;
+    }
+  }
+  
