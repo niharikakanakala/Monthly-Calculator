@@ -14,7 +14,7 @@ export function currencyFormat(number: number) {
     });
   }
   
-  //describe a function "sum" which returns the sum of an array using typescript
+ 
   export function sum(array: number[]) {
     return array.reduce((a, b) => a + b, 0);
   }
