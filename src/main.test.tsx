@@ -2,21 +2,11 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { fireEvent } from '@testing-library/dom';
-import { sum } from './utils';
 import { Form } from './components/form/form';
 import { Transaction } from './types';
 import { TransactionList } from './components/transaction-list/transaction-list';
 import { TransactionItem } from './components/transaction-list/transaction-item/transaction-item';
 
-//utils test cases
-
-describe('sum', () => {
-  it('correctly sums elements of array', () => {
-    expect(sum([1, 2, 3])).toBe(6);
-    expect(sum([])).toBe(0);
-    expect(sum([-2, 3])).toBe(1);
-  });
-});
 
 //Form
 jest.mock('nanoid', () => ({
