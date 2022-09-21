@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { fireEvent } from '@testing-library/dom';
 import { sum } from './utils';
-import { Display } from './components/display/display';
 import { Form } from './components/form/form';
 import { Transaction } from './types';
 import { TransactionList } from './components/transaction-list/transaction-list';
@@ -19,49 +18,6 @@ describe('sum', () => {
   });
 });
 
-//Display tests
-describe('<Display>', () => {
-  describe('when `budget > 0`', () => {
-    it('displays budget, income and expenses correctly', () => {
-      render(<Display income={1000} expenses={250} />);
-
-      expect(screen.getByText('+ $750.00')).toBeInTheDocument();
-      expect(screen.getByText('+ $1,000.00')).toBeInTheDocument();
-      expect(screen.getByText('- $250.00')).toBeInTheDocument();
-      expect(screen.getByText('25%')).toBeInTheDocument();
-    });
-  });
-
-  describe('when `budget === 0`', () => {
-    it('displays budget, income and expenses correctly', () => {
-      render(<Display income={500} expenses={500} />);
-
-      expect(screen.getByText('$0.00')).toBeInTheDocument();
-      expect(screen.getByText('+ $500.00')).toBeInTheDocument();
-      expect(screen.getByText('- $500.00')).toBeInTheDocument();
-    });
-  });
-
-  describe('when `budget < 0`', () => {
-    it('displays budget, income and expenses correctly', () => {
-      render(<Display income={250} expenses={500} />);
-
-      expect(screen.getByText('- $250.00')).toBeInTheDocument();
-      expect(screen.getByText('+ $250.00')).toBeInTheDocument();
-      expect(screen.getByText('- $500.00')).toBeInTheDocument();
-    });
-  });
-
-  describe('when `income === 0`', () => {
-    it('displays budget, income and expenses correctly', () => {
-      render(<Display income={0} expenses={500} />);
-
-      expect(screen.getByText('$0.00')).toBeInTheDocument();
-      expect(screen.getAllByText('- $500.00')).toHaveLength(2);
-    });
-  });
-});
-
 //Form
 jest.mock('nanoid', () => ({
   nanoid: () => {
@@ -71,12 +27,7 @@ jest.mock('nanoid', () => ({
 }));
 
 describe('<Form>', () => {
-  // it('renders correctly', () => {
-  //   const { getByPlaceholderText } = render(<Form onSubmit={() => {}} />);
-
-  //   expect(screen.getByPlaceholderText(/add description/i)).toBeInTheDocument();
-  //   expect(screen.getByPlaceholderText(/value/i)).toBeInTheDocument();
-  // });
+  
 
   it('calls the onSubmit function with the form values', () => {
     const onSubmit = jest.fn();
@@ -151,35 +102,6 @@ describe('<List>', () => {
 
 //TransactionItem
 describe('<TransactionItem>', () => {
-  it('renders correctly income type', () => {
-    render(
-      <TransactionItem
-        id="1"
-        description="Apple"
-        value={10}
-        type="income"
-        onDeleteClick={jest.fn()}
-      />
-    );
-
-    expect(screen.getByText('Apple')).toBeInTheDocument();
-    expect(screen.getByText('+ $10.00')).toBeInTheDocument();
-  });
-
-  it('renders correctly expense type', () => {
-    render(
-      <TransactionItem
-        id="1"
-        description="Apple"
-        value={10}
-        type="expense"
-        onDeleteClick={jest.fn()}
-      />
-    );
-
-    expect(screen.getByText('Apple')).toBeInTheDocument();
-    expect(screen.getByText('- $10.00')).toBeInTheDocument();
-  });
 
   it('calls onDeleteClick with transaction id', () => {
     const onDeleteClick = jest.fn();
